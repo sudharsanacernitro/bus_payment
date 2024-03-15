@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful</title>
+<style>/* Reset some default styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+    }
+    
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+    }
+    
+    header h1 {
+        margin: 0;
+    }
+    
+    nav ul {
+        list-style-type: none;
+    }
+    
+    nav ul li {
+        display: inline;
+        margin-right: 10px;
+    }
+    
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    main {
+        padding: 20px;
+    }
+    
+    .payment-success {
+        background-color: #dff0d8;
+        border: 1px solid #d0e9c6;
+        border-radius: 4px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .payment-success h2 {
+        color: #3c763d;
+    }
+    
+    .payment-success p {
+        color: #3c763d;
+    }
+    svg{
+        width:50px;
+        height:50px;
+        background-color: #5eb860;
+        border-radius: 50%;
+    }
+    @media screen and (max-width:600px)
+    {
+        img{
+            width:200px;
+            height: 200px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Your Website Name</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="payment-success">
+        <h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="green">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+        </svg>    Payment Successful</h2>
+        <p>Thank you for your payment. Your transaction has been successfully processed.</p>
+         <!-- SVG checkmark -->
+    </section>
+
+    <!-- More sections can be added here for additional content -->
+
+</main>
+<footer>
+    <p>&copy; 2024 Your Website. All rights reserved.</p>
+</footer>
+<script>
+    var img = document.createElement('img');
+
+// Set the source of the image (replace '<%= src %>' with your actual image source)
+img.src = "<%= src %>";
+document.body.appendChild(img);
+// Listen for the 'load' event to ensure the image is fully loaded
+img.onload = function() {
+    // Create an anchor element
+    var link = document.createElement('a');
+
+    // Convert the image to a data URL
+    var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext('2d');
+    canvas.width = img.width;
+    canvas.height = img.height;
+    ctx.drawImage(img, 0, 0);
+    var dataUrl = canvas.toDataURL('image/png');
+
+    // Set the data URL as the href attribute of the anchor
+    link.href = dataUrl;
+
+    // Set the 'download' attribute to prompt the user to download the image with a specified filename
+    link.download = "<%= name %>"+".png"; // Change the filename as needed
+
+    // Append the anchor to the document body and trigger the download
+    document.body.appendChild(link);
+    link.click();
+};
+
+</script>
+</body>
+</html>

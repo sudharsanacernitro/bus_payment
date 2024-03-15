@@ -1,0 +1,46 @@
+<html>
+<head>
+  <title>LOG-IN</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"> 
+
+
+</head>
+<body>
+<div  class=" container ">
+  <h2><center>LOG-IN PAGE</center></h2><br><br><br>
+  <center>
+    <div id="profile">
+  
+     </div>
+    
+    <div class="input-line">
+      <form  action="http://localhost:3002/l" method="post" enctype="multipart/form-data">
+        <br><br>
+      <label>enter your name:</label>
+      <input type="text" id="name" name="name" class="name" maxlenght="40" ><br><br><br>
+      <label>enter your email:</label>
+      <input type="text" id="name" name="email" class="email" maxlenght="40"  ><br><br><br>
+      <input type="file" name="image" id="fileInput" accept="image/*">
+    <center><input type="submit" name="RUN"  onclick="showInput();" id="submit" value="continue" ></center>
+  </form></div>
+<script>
+function showInput() {
+        const x=document.querySelector(".name").value;          
+        const y=document.querySelector(".email").value;      
+// Check browser support
+if (typeof(Storage) !== "undefined") {
+  // Store
+  localStorage.setItem("chat-name", x);
+  localStorage.setItem("chat-email",y);
+  }
+  }
+
+
+ 
+  </script>
+  
+</div>
+</center>
+</body>
+</html>
+

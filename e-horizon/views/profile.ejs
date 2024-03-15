@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-ZqoB0uWz5LkXgGKxFPwaIEuk3+X+7fHeqTvFp16meFJBrC4q+gGCBT3kRkg6+q0P" crossorigin="anonymous">
+ <meta name="viewport" content="width=device-width,initial-scale=1.0"> 
+	<title>Slide Navbar</title>
+<style>
+	#contents{
+	margin-left: 250px;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family:'Times New Roman', Times, serif;
+	background: linear-gradient(to bottom, #0a0a0aeb, #775d0f, #967e25);
+    
+}
+.main{
+	margin-bottom: 55px;
+
+	height: 610px;
+	background: red;
+
+	overflow: hidden;
+	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+}
+#chk{
+	display: none;
+     padding-right: 100px;
+     width: 200px;
+	
+}
+.signup{
+	position: relative;
+	width:100%;
+	height: 100%;
+}
+label{
+	color: #c9c9c9;
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	margin: 50px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+input{
+	width: 120%;
+	height: 20px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+.login{
+	height: 500px;
+    width: 125%;
+	background: #000000;
+	border-radius: 80% / 10%;
+    size: 100px;
+	transform: translateY(-190px);
+	transition: .4s ease-in-out;
+}
+.login label{
+	color: #d4a031ec;
+	margin-top:10px;
+	transform: scale(.7);
+    justify-content: center;
+    align-items: center;
+}
+
+#chk:checked ~ .login{
+	transform: translateY(-550px);
+	
+}
+#chk:checked ~ .login label{
+	transform: scale(1);	
+}
+#chk:checked ~ .signup label{
+	transform: scale(.5);
+}
+#profile1{
+    width:120px;
+    height: 120px;
+    border-radius: 50%;
+    border:3px solid #b8882d;
+    margin-left: 165px;
+    cursor:pointer;
+	margin-top: -50px;
+}
+
+h1{
+	
+	font-family:Georgia, 'Times New Roman', Times, serif;
+	font-size: 19px;
+	font-weight: BOLD;
+	color:#000000e3;
+	margin-left: 70px;
+
+}
+
+p{
+	
+	font-family:Georgia, 'Times New Roman', Times, serif;
+	font-size: 17px;
+	font-weight: BOLD;
+	color:#fbfbfbe3;
+	margin-left: 70px;
+
+}
+/*.highlight {
+    background-color: rgba(192, 160, 48, 0.843);
+    padding: 5px;
+    border-radius: 5px;
+}*/
+
+
+
+#body{
+        display: flex;
+        font-family: 'Times New Roman', Times, serif;
+        font-size:17px;
+    }
+    #nav{
+        border-right: 2px solid rgb(0, 0, 0);
+        padding-right: 40px;
+        height: 100vh;
+        width:43.5vh;
+        position: fixed;
+        font-family: 'Times New Roman', Times, serif;
+        background-color: rgba(0, 0, 0, 0.784)
+    }
+   h4, h5{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 19px;
+    }
+   
+    h2,h3{
+    font-weight: lighter;
+    color: rgba(255, 255, 255, 0.845);
+    padding-left: 30px;
+    font-family:'Times New Roman', Times, serif ;
+    }
+   
+h3:hover{
+    color:rgb(0, 0, 0);
+    font-weight:bolder;
+    font-size:25px;
+    
+}
+i{
+    width:20px;
+    height:20px;
+    size: 10px;
+    margin-top: 17px;
+    font-size: 1.73em;
+    
+}
+#buttons-nav{
+    display: flex;
+    border-radius: 20px;
+    margin-top: 30px;
+    margin-left: 30px;
+    padding-left: 5px;
+    padding-right: 1px;
+    width: 200px;
+    color: rgba(226, 226, 226, 0.826);
+    position: relative;
+    cursor: pointer;
+}
+#buttons-nav:hover{
+    background-color: rgb(170, 125, 43);
+    border-width: 20px;
+   /* cursor:pointer;
+   
+    text-shadow: 0 0 10px #fea501;*/
+    color: #000000;
+
+}
+#buttons-nav:after,
+#buttons-nav:before{
+    content: '';
+    height: 1.2px;
+    display: block;
+    width:60%;
+    background: rgb(207, 138, 9);
+    position: absolute;
+    left: 40px;
+    bottom: 0px;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+    border-radius: 10px;
+    
+}
+
+#call{
+    
+    
+    width: 43.5vh;     
+}
+#nav-button{
+    height: 40px;
+    width:200px;
+    background-color: rgba(211, 146, 61, 0.682);
+   margin-left: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+#profile{
+    width:150px;
+    height: 150px;
+    border-radius: 50%;
+    border:3px solid #fea501;
+    margin-left: 50px;
+    cursor:pointer;
+}
+#nav-bar{
+    width:300px;
+    height:40px;
+    position: fixed;
+    bottom: 1%;
+    left: 20%;
+    background-color: rgba(0, 0, 0, 0.667);
+    border-radius: 15px;
+    padding-bottom: 20px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+#menu{
+    padding-bottom:10px;
+    margin-left: 30px;
+    margin-top: 5px;
+    
+}
+
+#profile-img{color:rgba(255, 255, 255, 0.904);}
+
+
+
+
+@media screen and (max-width:1000px)
+{
+    #nav{
+        padding-right: 0px;
+    }
+    #contents{
+        width:710px;
+        margin-left: 250px;
+    }
+    
+}
+
+@media screen and (max-width:600px)
+{
+    #nav{
+        display: none;
+    }
+    #contents{
+        width:420px;
+        margin-left: 15px;
+        padding-left: 0px;
+    }
+    
+}
+@media screen and (max-width: 768px) {
+    .main {
+        width: 100%;
+        margin-right: 0; /* Reset margin to occupy full width on smaller screens */
+    }
+}
+</style>
+
+
+</head>
+<body>
+    <div id="body">
+        <div id="nav">
+           <div id="call"> <div style="margin-left: 20px;size:100px;margin-top: 10px;">
+                <img src="https://kms.kongu.edu/images/iti.png" id="profile" >
+            <div id="buttons-nav"><i class="fa fa-user" style="font-size: 1.73em;"></i>
+                <h2 id="profile-img"><%= name %></h2></div>
+            </div>
+        </div>
+            <div id="buttons-nav"><i class="fa fa-home" style="font-size: 1.73em;"></i>
+                <h3>Home</h3></div>
+                    
+             <div id="buttons-nav"><i class="fa fa-bell" style="font-size: 1.73em;"></i>
+                 <h3>Notification</h3></div>
+        
+            <div id="buttons-nav"><i class="fa fa-envelope" style="font-size: 1.73em;"></i>
+                 <h3>Messages</h3></div>
+        
+            <div id="buttons-nav"><i class="fab fa-cc-visa" style="font-size: 1.73em;"></i>
+                 <h3>Payment</h3></div>
+        
+            <div id="buttons-nav"><i class="fa fa-ellipsis-h" style="font-size: 1.73em;"></i>
+                <h3>More</h3></div>
+        </div>
+        </div>
+        <div id="contents">
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form>
+					<label for="chk" aria-hidden="true">Profile Page</label>
+					<div >
+						<img src="https://kms.kongu.edu/images/iti.png" id="profile1" >
+
+					</div>
+			<div id="tick">	
+				  
+                <h1 id="name">        </h1>
+                <h1 id="rollno">        </h1>
+                <h1 id="yos">        </h1>
+                <h1 id="email">        </h1>
+                <h1 id="phnno">        </h1>
+				</div>	
+				</form>
+			</div>
+
+			<div class="login">
+				<form>
+					
+					<div id="call">	
+				        <center><label for="chk" aria-hidden="true"><br>Bus Details</label></center>
+						<p id="Busno">        </p>
+						<p id="Busstop">        </p>
+						<p id="amt">        </p>
+						<p id="expiry">        </p>
+						<p id="paid">        </p>
+					</div>
+				</form>
+			</div>
+	</div>
+
+<div id="nav-bar" style="display: none;">  
+    <i class="fa fa-home" id="menu" onclick="menu();" style="font-size: large;color: rgba(255, 255, 255, 0.595);cursor: pointer;font-size: 1.73em;"></i>
+    <i class="fa fa-envelope" id="menu" style="font-size: large;color: rgba(255, 255, 255, 0.595);cursor: pointer;font-size: 1.53em;"></i>
+    <i class="fa fa-user" id="menu" style="font-size: large;color: rgba(255, 255, 255, 0.595);cursor: pointer;font-size: 1.53em;"></i>
+    <i class="fa fa-bell" id="menu" style="font-size: large;color: rgba(255, 255, 255, 0.595);cursor: pointer;font-size: 1.53em;"></i>
+    <i class="fab fa-cc-visa" id="menu" style="font-size: large;color: rgba(255, 255, 255, 0.595);cursor: pointer;font-size: 1.53em;"></i>
+
+  </div>
+
+
+
+
+	<script>
+		   document.getElementById("rollno").innerHTML="<b>Roll No: </b><%= name %>";
+		   document.getElementById("yos").innerHTML="<b>Year of Study: </b>3";
+		   document.getElementById("phnno").innerHTML="<b>D.O.B: </b><%= dob %>";
+
+
+		   document.getElementById("Busno").innerHTML="<b>Bus No:</b> <%= bus %>";
+		   document.getElementById("Busstop").innerHTML="<b>Stopping Name: </b> <%= stopping %>";
+		   document.getElementById("expiry").innerHTML="<b>Expiry Date: </b><%= expire %>";
+		   document.getElementById("paid").innerHTML="<b>Amount Paid or Not: </b><%= allowed %>";
+
+		  /* var answers = document.querySelectorAll('.login p');
+        answers.forEach(function(answer) {
+            answer.classList.add('highlight');
+        });*/
+
+        var screen_width=window.innerWidth;
+var screen_height=window.screen.height;
+
+window.onload=function (){
+  checkScreenSize();
+}
+
+function menu(){
+  document.getElementById("result").style.width="350px";
+ 
+}
+
+function checkScreenSize(){
+  var screenWidth = window.innerWidth;
+if(screenWidth<600)
+{
+  document.getElementById('nav-bar').style.display="block";
+  document.getElementById('nav-bar').style.left=String(screenWidth/2-150);
+  document.getElementById("contents").style.width=String(screenWidth-10);
+
+}
+else if(screenWidth<1000)
+{
+  
+    document.getElementById("contents").style.width="710px";
+
+}
+
+else{
+  document.getElementById('nav-bar').style.display="none";
+  document.getElementById("contents").style.width="100%";
+
+}
+}
+window.addEventListener('resize', checkScreenSize);
+console.log(screen_width);
+
+
+	</script>
+</body>
+</html>

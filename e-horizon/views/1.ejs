@@ -1,0 +1,627 @@
+<html>
+<head><style>
+.button {
+  background-color: #555555;
+  border: none;
+  color: white;
+  padding: 20px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+.button {
+  margin: 0;
+  position: absolute;
+  top: 15%;
+  left: 90%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.container {
+
+  max-height: 980px;
+  
+  
+}
+#row{display: flex;
+width:900px;}
+#jk{
+width:300;
+height:50;
+  padding: 20px 30px;
+  border-radius: 20px;
+}
+#input-form {
+
+color: black;
+  display: flex;
+
+}
+#ok
+{
+        align-items: center;
+        justify-content: center;
+
+
+}
+</style>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <style>
+  body{
+  margin: 0 auto;
+  font-family: Arial;
+  background-color:#6f8cb7;
+  color: #000000;
+  
+}
+#op{
+  overflow-y: scroll; /* Show vertical scrollbar */
+  /* Show horizontal scrollbar */
+  width:255%;
+  height:829px;
+  background-size: 1400px;
+color: white;
+padding-top: 8px;
+background-image: url('whatsapp.jpg');
+background-size: 40%;
+border:1px solid white;
+border-top:none;
+}
+
+
+#messagess
+{
+width:auto;
+float: left;
+height: auto;
+  padding: 10px;
+  clear: both;
+border-radius: 30px;
+border: 3px solid #202c2b;
+background:dimgray;
+color: #fff;
+        border: 1px black;
+
+}
+#result
+{
+width:320px;
+color:white;
+margin-top: 17px;
+margin-bottom: 20px;
+border-right: 1px solid wheat;
+overflow-x: hidden;
+height: 94%;
+overflow-y: scroll;
+}
+
+#m {
+width:auto;
+  display: flex;
+
+  clear: both;
+  border-radius: 30px;
+border: 3px solid #202c2b;
+background:#13ab9e;
+ float: right;
+ height: auto;
+  padding: 10px;
+
+        border: 1px black;
+
+
+
+} 
+#messagess{
+  width:auto;
+  display: flex;
+
+  clear: both;
+  border-radius: 30px;
+border: 3px solid #202c2b;
+background:#13ab9e;
+ float: left;
+ height: auto;
+  padding: 10px;
+
+        border: 1px black;
+
+
+}
+.scroll-container {
+  height: 850px; /* Set your preferred height */
+  overflow-y: scroll; /* Enable vertical scrollbar */
+}
+#ko
+{
+  font-size: 100%;
+color:white;
+  padding: 10px;
+  background-color: rgb(27, 60, 75);
+  height: 50px;
+  margin-top: 17px;
+  width:250%;
+
+border-bottom:none;
+}
+h2
+{    font-family: 'Cedarville Cursive';font-size: 22px;
+}
+#im {
+  border-radius: 50%;
+}
+#j{color:white;
+padding-top: 15px;
+ cursor:pointer;
+margin-top:15px;
+}
+#your_chat{
+  font-style: italic;
+  background-color: dimgrey;
+  
+}
+  #pro_file{display: flex;
+    background-color: rgb(27, 60, 75);  width: 700px;
+  }
+  #profile_img{
+    cursor: pointer;
+  }
+#input-form{margin-right:0px;}
+  #message{width: 200px;
+  margin-left:200px;
+position: end;
+}
+#button{ position: fixed;
+    top: 20px;
+    right: 20px;
+}
+#user{
+  display: flex;
+  flex-direction: column;
+}
+#jk{margin-top: 20px;}
+#us{
+  width:400px;
+  height: 900px;
+  position: fixed;
+  top:20;
+  right:0;
+overflow-y: scroll;
+background-color: rgb(14, 37, 48);
+}
+body{overflow-y: hidden;}
+#oo{
+  height:829px;
+}
+
+@media screen and (max-width:600px)
+{
+  #us,#button{display:none;}
+  
+  #op{width:117%;
+  margin-right: 50px;
+  
+  }
+  #ko{width:112%;
+    margin-right: 50px;}
+  #row{width:150%;
+  margin-left:20px ;
+  align-items: center;
+  justify-content: center;
+    }
+
+    #result{ height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;}
+  
+}
+
+
+  </style>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"> 
+</head>
+<body  style="background-color:rgb(1, 25, 31);">
+<div id="row">
+  <div id="result" >
+<div id="pro_file" class="container"></div>
+  <div id="oo"></div>
+</div>
+<div>    <i class="fas fa-bars menu-icon" id="men"onclick="menu();" style="font-size: large;color: white;cursor: pointer;"></i></div>
+  <div >
+    <div id="main"><div id="ko" class="container"></div>
+  <div class="container  " id="op" >
+   
+<br><br><br>
+
+</div>
+<form id="input-form">
+  <input type="text" id="message" name="message" placeholder="Enter your message" >
+<button type="submit" value="Send" id="ok"onclick="parseQueryString();">
+  <i class="fas fa-paper-plane"></i></button>
+ </form>
+</div>
+
+
+  
+    <div >
+   
+  <div class="offcanvas-body" id="us">
+   <ul id="user"  class="scroll-container">
+    <% parsedList.forEach(function(item) { 
+      if(item !=  name ){
+      %>
+        <button type="button" id="jk" onclick="danger('<%= item %>');"><%= item %></button><br><br>
+
+    <%
+      }
+  }); %>
+</ul>
+  </div>
+</div>
+</div>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.2/js/bootstrap.bundle.min.js"> </script>
+
+  <script>
+  
+var screen_width=window.innerWidth;
+var screen_height=window.screen.height;
+//document.getElementById("op").style.height=String(screen_height);
+let o,str;
+let r;
+var c=[];
+window.onload=function (){
+  checkScreenSize();
+}
+
+function menu(){
+  document.getElementById("result").style.width="350px";
+ // document.getElementById("result").style.position="fixed";
+
+ 
+}
+
+function checkScreenSize(){
+  var screenWidth = window.innerWidth;
+if(screenWidth<700)
+{
+  document.getElementById("result").style.width="0px";
+  document.getElementById('men').style.display="block";
+
+}
+else{
+  document.getElementById('men').style.display="none";
+  document.getElementById("result").style.width="350px";
+
+}
+}
+window.addEventListener('resize', checkScreenSize);
+console.log(screen_width);
+
+var profile=document.getElementById('pro_file');
+var pic=document.createElement('img');
+pic.setAttribute('id','profile_img');
+pic.style.width='50px';
+pic.style.height='50px';
+pic.src="<%= profile %>";
+pic.style.borderRadius="30px";
+profile.insertBefore(pic,profile.childNodes[0]);
+
+  
+    function closeOffcanvas() {
+      var offcanvas = new bootstrap.Offcanvas(document.querySelector('.offcanvas'));
+      offcanvas.hide();
+    }
+    
+  </script>
+ <script>
+ 
+ 
+ 
+ const k="<%= name %>";
+ if(k!="admin2024-03-13")
+ {
+  document.getElementById("result").innerHTML="";
+  document.getElementById("us").style.display="none";
+  o="admin2024-03-13";
+
+ }
+const h=localStorage.getItem('phone'); 
+    const webSocket = new WebSocket('ws://localhost:44/?'+k, [], {
+  headers: {
+    "Connection": "Upgrade",
+  }
+});
+
+
+      var messages=document.getElementById("op")
+            var me=document.getElementById("oo")
+
+
+
+//to remove the message contents if user is changed
+function danger(l){
+      o=l;    
+ var contentDiv = document.getElementById('op');
+ while (contentDiv.firstChild) {
+        contentDiv.removeChild(contentDiv.firstChild);
+    }
+
+ document.getElementById("ko").innerHTML= o;
+
+      messages.innerHTML = '';
+      chat();
+}
+
+
+//for displaying backup messages
+function chat(){
+for(let i=0;i<c.length;i++){
+const st=c[i].split('&');
+  if(o===st[1] && k===st[2])
+  {
+  
+  var messageElement = document.createElement("p");
+       messageElement.id="messagess";
+    messageElement.textContent = st[0];
+    console.log(st[0]);
+    messages.appendChild(messageElement);
+    
+ }
+ else if(k===st[1] && o===st[2])
+ {
+ var messageElement = document.createElement("p");
+       messageElement.id="m";
+    messageElement.textContent = st[0];
+    console.log(st[0]);
+    messages.appendChild(messageElement);
+ }
+ }
+ }
+
+    webSocket.onmessage = (event) => {
+
+      
+      console.log(event)
+     // let fg=event.data;
+     // let gh=fg.split("+-*/");
+
+   
+     /*
+     if(fg.length>100)
+     {      let foot=gh[2].split('-');
+     if(gh[1]===k){
+     
+     if(foot[0]!="%PDF")
+     convertBinaryToPDF(gh[2], "websocket.png","img/png");
+     else
+          convertBinaryToPDF(gh[2], "websocket.pdf","application/pdf");
+     
+     }
+     }
+     else{*/
+      const jsonData = JSON.parse(event.data);
+      console.log('Header:', jsonData.header);
+      
+      if(jsonData.header==="message"){
+     str=jsonData.content+'&'+jsonData.from+'&'+jsonData.to;
+      }
+      else{
+        str=jsonData.username+'&user';
+      }
+
+      str=str.split('&');
+     //return;
+     /* }
+     
+     
+     
+       function convertBinaryToPDF(bin, fileName,h) 
+          {         // Create a Uint8Array from the binary data
+                    
+                                                    //binaryDataElement.textContent = bin.length;
+                     const uint8Array = new Uint8Array(bin.length);
+                     for (let i = 0; i < bin.length; i++) {
+                     uint8Array[i] = bin.charCodeAt(i);
+                                                                }
+
+                    // Create a Blob from the Uint8Array
+                    const blob = new Blob([uint8Array], { type: h });
+
+                    // Create a download link
+                    const downloadLink = document.createElement('a');
+                    downloadLink.href = URL.createObjectURL(blob);
+                    downloadLink.download = fileName;
+                      play();
+                      
+                  // Trigger a click event on the download link to initiate the download
+                   downloadLink.click();
+            }
+      
+    
+      
+      */
+      
+
+      //for creating the users live time
+      var user=document.getElementById('user');
+      if(str[1]==='user')
+      {
+        console.log(str[0]+" created");
+      const messageElement = document.createElement("button");
+       messageElement.id="jk";
+       messageElement.setAttribute('class',"msg_"+str[0]);
+       messageElement.onclick=function() {
+    o=str[0];
+    danger(o)
+  };
+    messageElement.textContent = str[0];
+   var f_b=user.querySelector('.msg_'+str[0]);
+   if((!f_b)&&(k!=str[0]))
+   {
+    user.appendChild(messageElement);
+   }
+}
+
+      //for display the message
+        if(k===str[1])
+       {      c.push(str[0]+'&'+str[1]+'&'+str[2]);
+       const messageElement = document.createElement("p");
+              messageElement.id="m";
+    messageElement.textContent = str[0];
+   messages.appendChild(messageElement);
+   messages.appendChild("<br>");
+       }
+       else if(k===str[2])
+      {    c.push(str[0]+'&'+str[1]+'&'+str[2]);
+      if(o===str[1]){
+       const messageElement = document.createElement("p");
+       messageElement.id="messagess";
+    messageElement.textContent = str[0];
+    messages.appendChild(messageElement);
+    messages.appendChild("<br>");
+}
+
+//for message notifications
+else{
+var contentDiv = document.getElementById('oo');
+var div_usr=document.createElement('div');
+const messageElement = document.createElement("h4");
+
+
+       messageElement.id="j";
+      
+      messageElement.style.paddingLeft="10px";
+      messageElement.style.paddingBottom="17px";
+      var nm=str[1];
+       messageElement.onclick=function() {
+       console.log(nm+" selected");
+       document.getElementById("notify_msg_"+nm).style.display="none";
+    o=nm;
+    danger(o);
+  };
+  var user_img=document.createElement('img');
+  user_img.style.width="50px";
+  user_img.style.height="50px";
+  user_img.style.borderRadius="40px";
+  user_img.src="profile.png";
+  user_img.style.paddingBottom="5px";
+  user_img.style.paddingRight="5px";
+
+    messageElement.textContent = str[1];
+    
+var found=me.querySelector('.'+str[1]);
+console.log(found);
+div_usr.appendChild(user_img);
+div_usr.appendChild(messageElement);
+div_usr.style.display="flex";
+div_usr.style.alignItems="center";
+div_usr.className=str[1];
+div_usr.style.borderBottom="1px solid grey";
+notify_msg=document.createElement('div');
+notify_msg.style.width="10px";
+notify_msg.style.height="10px";
+notify_msg.style.borderRadius="5px";
+notify_msg.style.backgroundColor="blue";
+notify_msg.style.position="relative";
+notify_msg.style.right="0";
+notify_msg.style.marginLeft="50%";
+notify_msg.setAttribute('id','notify_msg_'+str[1]);
+div_usr.appendChild(notify_msg);
+if(!found)
+{ 
+    me.insertBefore(div_usr, me.childNodes[0]);
+}
+else{
+
+       var elementToRemove = document.getElementsByClassName(str[1])[0];
+       if(elementToRemove) {
+        elementToRemove.parentNode.removeChild(elementToRemove);
+        } else {
+        console.log("Element not found.");
+         }
+         
+         me.insertBefore(div_usr, me.childNodes[0]);
+
+}
+    
+        }
+        }
+        
+       
+
+      
+    };
+    
+    
+    /*
+    
+     function convertToFileBinary() {
+      const fileInput = document.getElementById('fileInput');
+      const binaryDataElement = document.getElementById('binaryData');
+
+    
+
+      const file = fileInput.files[0];
+      const reader = new FileReader();
+
+      reader.onload = function(event) {
+        const binaryData = new Uint8Array(event.target.result);        
+           r = Array.from(binaryData, byte => String.fromCharCode(byte)).join('');
+        
+        
+
+        sendimg();
+                                      
+};
+
+      reader.readAsArrayBuffer(file);
+    }*/
+     
+    str="";
+    webSocket.addEventListener("open", () => {
+      console.log("We are connected");
+            console.log(o);
+    });
+    
+    function sendMessage(event) {
+      var inputMessage = document.getElementById('message')
+      webSocket.send(inputMessage.value+'&'+k+'&'+o+'&'+'8')
+      inputMessage.value = ""
+      event.preventDefault();
+
+    }
+    
+  
+    
+    
+    
+    function send(event) {
+      var inputMessage = document.getElementById('message')
+      webSocket.send('none'+'&'+k+'&'+o+'&'+'8')
+      inputMessage.value = ""
+      event.preventDefault();
+
+    }
+    
+    
+        document.getElementById('input-form').addEventListener('submit', sendMessage);
+ 
+  </script>
+</body>
+</html>
+

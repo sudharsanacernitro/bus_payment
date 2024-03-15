@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Paypal Form</title>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Times New Roman', Times, serif;
+}
+body {
+
+  height: 100vh;
+   background: url('payment.avif') no-repeat fixed center;
+        background-size: cover;
+        
+}
+#main{
+  height: 100vh;
+}
+.wrapper {
+  width: 800px;
+height:800px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(200px);
+  border: 1px solid rgba(207, 207, 207, 0.6);
+  /* Gradient with two colors */
+  overflow: hidden;
+}
+.wrapper h2 {
+  color: #fff;
+  font-size: 30px;
+  padding: 5px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.wrapper h4 {
+  padding-top: 35px;
+  color: #fff;
+  font-size: 21px;
+}
+
+.input_group{
+  margin: 5px auto;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 2px;
+}
+
+.input_box {
+  width: 100%;
+  height: 100%;
+  margin-right: 8px;
+  position: relative;
+  margin-top:10px;
+}
+
+.input_box:last-child {
+  margin-right: 0;
+}
+.input_box .name {
+  padding: 20px 15px 20px 10px; /* Adjust padding as needed */
+  width: 100%; /* Adjust width as needed */
+  height: 100%; /* Adjust height as needed */
+background-color: #e8e8e8cf;
+  
+  border: 1px solid #0003;
+  outline: none;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  border-radius: 3px;
+  color: #333;
+}
+
+.input_box .name:focus,
+.dob:focus {
+  -webkit-box-shadow: 0 0 2px 1px #000;
+  -moz-box-shadow: 0 0 2px 1px #000;
+  box-shadow: 0 0 2px 1px #000;
+  border: 1px solid #000;
+}
+.input_box .icon {
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  color: #000;
+  background-color: #838383a3;
+  border-radius: 2px 0 0 2px;
+  transition: 0.3s;
+  font-size: 20px;
+  pointer-events: none;
+  border: 1px solid #00000003;
+  border-right: none;
+}
+
+.name:focus + .icon {
+  background-color: #000;
+  color: #fff;
+  border-right: 1px solid #000;
+  border: none;
+  transition: 1s;
+}
+.dob {
+  width: 30%;
+  padding: 14px;
+  text-align: center;
+  background-color: #fcfcfc;
+  transition: 0.3s;
+  outline: none;
+  border: 1px solid #c0bfbf;
+  border-radius: 3px;
+}
+
+.radio {
+  display: none;
+}
+h1{
+  color: white;
+}
+.input_box label {
+  width: 50%;
+  padding: 10px;
+  background-color: #fcfcfc;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  border: 1px solid #c0bfbf;
+}
+
+.input_box label:first-of-type {
+  border-top-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-right: none;
+}
+
+.input_box label:last-of-type {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.radio:checked + label {
+  background-color: #000;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.input_box button {
+  width: 100%;
+  background: none;
+  color: #fff;
+  padding: 11px;
+  border-right: 4px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  border: 2px solid #fff;
+}
+
+.input_box button:hover {
+  cursor: pointer;
+  background-color: #fff;
+  border: 2px solid #000;
+  color: #000;
+}
+.svgs{
+    width: 5%;
+    margin-left: 100px;
+    padding-bottom: 20px;
+    }
+    .pay{
+  padding-left: 9%;
+  margin-top:10px;
+  border: 2px solid black;
+ 
+    }
+@media (max-width: 768px) {
+  .wrapper {
+    width: 90%; /* Adjust width for smaller screens */
+  }
+  
+  .input_box {
+    width: calc(50% - 4px); /* Adjust width for smaller screens and add spacing */
+  }
+}
+.pay{
+background-color:white;
+height:200px;
+}
+#p{color:black;}
+    </style>
+  </head>
+  <body onload="initializeExpiry()">
+
+    
+   <div id="main">
+    <div class="wrapper">
+      <div>
+      <h2>Payment Form</h2>
+      <form action="/payment-form" method="post">
+        <div class="input_group">
+        
+          <div class="input_box">
+            <input type="text"name="rollno" placeholder="         Rollno" required class="name" />
+            <i class="fa fa-user icon"></i>
+          </div>
+        </div>
+        
+        <div class="input_group">
+          <div class="input_box">
+            <input type="text" name="year_study" placeholder="         Year of study - Course and Branch" required class="name" />
+            <i class="fa fa-institution icon"></i>
+          </div>
+        </div>
+
+        <div class="input_group">
+          <div class="input_box">
+            <input type="email" name="email" placeholder="         Email Address" required class="name"/>
+            <i class="fa fa-envelope icon"></i>
+          </div>
+        </div>
+        
+      
+
+        <div class="input_group">
+          <div class="input_box">
+            <h4>Date Of Birth</h4>
+            <input type="date" name="dob" placeholder="dd - mm - yyyy" required class="name" />
+             
+          </div>
+          <div class="input_box">
+            <h4>Bus No</h4>
+            <div class="input_box">
+              <input type="text" name="bus_no" placeholder="         Bus No" required class="name" />
+              <i  class="fa fa-bus icon"></i>
+            </div>       
+          </div>
+        </div>
+        <div class="input_group">
+          <div class="input_box">
+            <input type="text" name="stopping" placeholder="         Stopping Name" required class="name" />
+            <i class="fa-solid fa-location-dot icon" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="input_group">
+          <div class="input_box">
+            <input type="text"name="phone_no" placeholder="         Phone no" required class="name" />
+            <i class="fa-solid fa-phone icon"></i>
+          </div>
+          <div class="input_box">
+            <input type="text" name="amount" placeholder="         Total Amount" required class="name" />
+            <i class="fa fa-rupee icon"></i>
+          </div>
+        </div>
+      
+        <div class="input_group">
+          <div class="input_box">
+            <h4>Current Date</h4>
+            <div class="input_box">
+              <input id="ini" type="tel" name="current_date" class="name" placeholder="Current date" required />
+            
+            </div>
+           
+             
+          </div>
+          <div class="input_box">
+            <h4>Expiry Date</h4>
+            <div class="input_box">
+              <input id="exp" type="tel" name="expiry_date" class="name" placeholder="         Expiry date" required />
+             
+            </div>       
+          </div>
+        </div>
+        
+        <div class="input_group">
+          <div class="input_box">
+            <button type="submit">PAY NOW</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    </div>
+
+
+    <div class="pay">
+        
+      <center><h1 id="p">100% Secure Payment</h1></center>
+      <div class="pay1">
+          
+        <img src="google-pay-icon.png" class="svgs">
+       
+        
+        <img src="visa-icon.png"       class="svgs">
+        <img src="master-card-icon.png"class="svgs">
+        <img src="maestro-icon.png"    class="svgs">
+
+         <img src="phonepe-icon.png"    class="svgs">
+        <img src="upi-payment-icon.png" class="svgs">
+      </div>
+
+    </div>
+
+    <script>
+      function initializeExpiry() {
+        // Get the current date
+        var currentDate = new Date();
+      
+        // Calculate expiry date (current date + 365 days)
+        var expiryDate = new Date(currentDate);
+        expiryDate.setDate(currentDate.getDate() + 365);
+      
+        // Format the expiry date as YYYY-MM-DD
+        var formattedExpiryDate = expiryDate.getFullYear() + '-' +
+                                   ('0' + (expiryDate.getMonth() + 1)).slice(-2) + '-' +
+                                   ('0' + expiryDate.getDate()).slice(-2);
+      
+        // Display the expiry date
+        document.getElementById("exp").value = formattedExpiryDate;
+
+       // format for current date
+        var formattedCurrentDate = currentDate.getFullYear() + '-' +
+                             ('0' + (currentDate.getMonth() + 1)).slice(-2) + '-' +
+                             ('0' + currentDate.getDate()).slice(-2);
+
+  // Display the current date
+  document.getElementById("ini").value = formattedCurrentDate;
+      }
+
+     
+      </script>
+
+  </body>
+</html>

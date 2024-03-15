@@ -1,0 +1,436 @@
+<html><head>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-ZqoB0uWz5LkXgGKxFPwaIEuk3+X+7fHeqTvFp16meFJBrC4q+gGCBT3kRkg6+q0P" crossorigin="anonymous">
+     <meta name="viewport" content="width=device-width,initial-scale=1.0"> 
+    <style>
+        #body{
+            display: flex;
+            font-family: 'Times New Roman', Times, serif;
+            font-size:17px;
+        }
+        #nav{
+            border-right: 2px solid rgb(0, 0, 0);
+            padding-right: 40px;
+            height: 100vh;
+            width:43.5vh;
+            position: fixed;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: rgba(0, 0, 0, 0.784)
+        }
+       h4, h5{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 19px;
+        }
+       
+        h2,h3{
+        font-weight: lighter;
+        color: rgba(255, 255, 255, 0.845);
+        padding-left: 30px;
+        font-family:'Times New Roman', Times, serif ;
+        }
+       
+    h3:hover{
+        color:rgb(0, 0, 0);
+        font-weight:bolder;
+        font-size:25px;
+        
+    }
+    i{
+        width:20px;
+        height:20px;
+        size: 10px;
+        margin-top: 17px;
+        font-size: 1.73em;
+        
+    }
+    #buttons-nav{
+        display: flex;
+        border-radius: 20px;
+        margin-top: 30px;
+        margin-left: 30px;
+        padding-left: 5px;
+        padding-right: 1px;
+        width: 200px;
+        color: rgba(226, 226, 226, 0.826);
+        position: relative;
+        cursor: pointer;
+    }
+    #buttons-nav:hover{
+        background-color: rgb(170, 125, 43);
+        border-width: 20px;
+       /* cursor:pointer;
+       
+        text-shadow: 0 0 10px #fea501;*/
+        color: #000000;
+    
+    }
+    #buttons-nav:after,
+    #buttons-nav:before{
+        content: '';
+        height: 1.2px;
+        display: block;
+        width:60%;
+        background: rgb(207, 138, 9);
+        position: absolute;
+        left: 40px;
+        bottom: 0px;
+        opacity: 0;
+        transition: all .5s ease-in-out;
+        border-radius: 10px;
+        
+    }
+    
+    #call{
+        background: rgba(0, 0, 0, 0.265);
+        border: 1px solid;
+        width: 43.5vh;     
+    }
+    #nav-button{
+        height: 40px;
+        width:200px;
+        background-color: rgba(211, 146, 61, 0.682);
+       margin-left: 20px;
+        border-radius: 20px;
+        margin-top: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+    #profile{
+        width:150px;
+        height: 150px;
+        border-radius: 50%;
+        border:3px solid #fea501;
+        margin-left: 50px;
+        cursor:pointer;
+    }
+    #nav-bar{
+        width:300px;
+        height:40px;
+        position: fixed;
+        bottom: 3%;
+        left: 20%;
+        background-color: rgba(153, 129, 129, 0.667);
+        border-radius: 15px;
+        padding-bottom: 20px;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+    #menu{
+        padding-bottom:10px;
+        margin-left: 30px;
+        margin-top: 5px;
+        
+    }
+    
+    #contents{
+        width:1200px;
+        margin-left:39%;
+        padding:6%;
+        display: flex;
+        border:2px solid white;
+        border-radius: 50px;
+        height: auto;
+        flex-wrap: wrap;
+
+    }
+    #bus-no{
+        
+        border:2px solid black;
+        background-color: dimgray;
+    }
+    #bus-no:hover{
+        background-color: white;
+    }
+   
+    #main{padding-top:7%;}
+    #profile-img{color:rgba(255, 255, 255, 0.904);}
+    td{
+        border:1px solid black;
+       padding:10%;
+       
+    }
+    table{
+        width:100%;
+        height:100%;
+        font-family: 'Brush Script MT', cursive;
+        font-size: 36px;
+    }
+    th{
+        border:2px solid black;
+        background-color: dimgray;
+        font-size: 25px;
+    }
+    td{
+      background-color: rgb(27, 60, 75);
+      color:white;
+    }
+    body{
+        font-family: 'Brush Script MT', cursive;
+        background-color: rgb(21, 34, 43);
+    }
+    h1{  font-family: 'Brush Script MT', cursive;
+    color:rgb(12, 165, 192);
+    }
+    @media screen and (max-width:1000px)
+    {
+        #nav{
+            padding-right: 0px;
+        }
+        #contents{
+            width:710px;
+            margin-left: 250px;
+            flex-wrap: wrap;
+        }
+        
+    }
+    
+    @media screen and (max-width:600px)
+    {
+        #nav{
+            display: none;
+        }
+        #contents{
+            width:320px;
+            margin-left: 10px;
+            padding-left: 10px;
+            height:100vh;
+            flex-wrap: wrap;
+        }
+        table
+        {
+            width:90%;
+            height: 90%;
+            font-size: 20px;
+            padding: 0%;
+        }
+        td{
+          padding:1%;
+        }
+        
+    }
+    
+    </style>
+    </head><body>
+    <div id="body">
+        <div id="nav">
+            
+           
+                    
+             <div id="buttons-nav" onclick="route('notifi');"><i class="fa fa-bell" style="font-size: 1.73em;"></i>
+                 <h3>Notification</h3></div>
+        
+            <div id="buttons-nav"  onclick="route('message');"><i class="fa fa-envelope" style="font-size: 1.73em;"></i>
+                 <h3>Messages</h3></div>
+        
+            <div id="buttons-nav"  onclick="route('payment');"><i class="fab fa-cc-visa" style="font-size: 1.73em;"></i>
+                 <h3>Payment</h3></div>
+        
+            <div id="buttons-nav"  ><i class="fa fa-ellipsis-h" style="font-size: 1.73em;"></i>
+                <h3>More</h3></div>
+        </div>
+      <div id="main">
+    <div id="contents">
+        
+    </div>
+    
+    </div>
+    </div>
+    <div id="nav-bar" style="display: none;">  
+        <i class="fa fa-home" id="menu" onclick="menu();" style="font-size: large;color: black;cursor: pointer;font-size: 1.73em;"></i>
+        <i class="fa fa-envelope" id="menu" style="font-size: large;color: black;cursor: pointer;font-size: 1.53em;"></i>
+        <i class="fa fa-user" id="menu" style="font-size: large;color: black;cursor: pointer;font-size: 1.53em;"></i>
+        <i class="fa fa-bell" id="menu" style="font-size: large;color: black;cursor: pointer;font-size: 1.53em;"></i>
+        <i class="fab fa-cc-visa" id="menu" style="font-size: large;color: black;cursor: pointer;font-size: 1.53em;"></i>
+    
+      </div>
+    
+    
+    <script>
+           //for responsive
+    var screen_width=window.innerWidth;
+    var screen_height=window.screen.height;
+    
+    window.onload=function (){
+      checkScreenSize();
+    }
+    
+    function menu(){
+      document.getElementById("result").style.width="350px";
+     
+    }
+    
+    function checkScreenSize(){
+      var screenWidth = window.innerWidth;
+    if(screenWidth<600)
+    {
+      document.getElementById('nav-bar').style.display="block";
+      document.getElementById('nav-bar').style.left=String(screenWidth/2-150);
+      document.getElementById("contents").style.width=String(screenWidth-10);
+    
+    }
+    else if(screenWidth<1000)
+    {
+      
+        document.getElementById("contents").style.width="710px";
+        document.getElementById('nav-bar').style.display="none";
+    
+    }
+    
+    else{
+      document.getElementById('nav-bar').style.display="none";
+      document.getElementById("contents").style.width="1200px";
+    
+    }
+    }
+    window.addEventListener('resize', checkScreenSize);
+    console.log(screen_width);
+    
+    
+    //router config
+    function route(a)
+    {
+        window.location.href=('/'+a);
+        
+    }
+
+
+    fetch('http://localhost:81/bus-no/'+"<%= bus_no %>")
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log(data[0]['stopping']['vellode']);
+
+    const stopping = data[0]['stopping'];
+
+const table = document.createElement('table');
+
+
+const headerRow = document.createElement('tr');
+const headerCell1 = document.createElement('th');
+headerCell1.textContent = 'Stop';
+const headerCell2 = document.createElement('th');
+headerCell2.textContent = 'Amount';
+headerRow.appendChild(headerCell1);
+headerRow.appendChild(headerCell2);
+table.appendChild(headerRow);
+for (const stop in stopping) {
+    if (stopping.hasOwnProperty(stop)) {
+        const row = document.createElement('tr');
+        const cell1 = document.createElement('td');
+        const cell2 = document.createElement('td');
+        cell1.textContent = stop;
+        cell2.textContent = stopping[stop];
+        row.appendChild(cell1);
+        row.appendChild(cell2);
+        table.appendChild(row);
+    }
+}
+const table_heading=document.createElement("div");
+table_heading.style.width="100%";
+const h1=document.createElement('h1');
+h1.textContent="stopping-details";
+table_heading.appendChild(h1);
+table_heading.appendChild(table);
+table_heading.style.marginBottom="2%";
+
+document.getElementById("contents").appendChild(table_heading);
+
+
+  })
+  .catch(error => {
+    console.error('There was a problem with the fetch operation:', error);
+  });
+
+
+
+
+  fetch('http://localhost:81/student-bus/'+"<%= bus_no %>")
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+
+    function createTable(data) {
+  const table = document.createElement('table');
+  const thead = table.createTHead();
+  const tbody = table.createTBody();
+
+  // Create table header
+  const headerRow = thead.insertRow();
+  for (const key in data[0]) {
+    const th = document.createElement('th');
+    th.textContent = key.toUpperCase();
+    headerRow.appendChild(th);
+  }
+
+  // Create table rows and cells
+  data.forEach(item => {
+    const row = tbody.insertRow();
+    for (const key in item) {
+      const cell = row.insertCell();
+      
+      if(key=="name"){
+        const anchor = document.createElement('a');
+          anchor.textContent = item[key];
+          anchor.href = 'http://localhost:81/profile/'+item[key]; // Set href to the URL
+          cell.appendChild(anchor);
+      }
+      else{
+
+      if(key=="allowed")
+      {
+        if(item[key]==true){
+        cell.textContent = "Payed";}
+        else{
+          cell.textContent = "Not Payed";
+        }
+      }
+      else{
+      cell.textContent = item[key];
+      }
+    }
+    }
+  });
+
+  return table;
+}
+
+// Get the container element where the table will be appended
+const container = document.getElementById('contents');
+
+// Create the table and append it to the container
+const table = createTable(data);
+const table_heading=document.createElement("div");
+table_heading.style.width="100%";
+const h1=document.createElement('h1');
+h1.textContent="student-details";
+table_heading.appendChild(h1);
+table_heading.appendChild(table);
+table_heading.style.marginBottom="2%";
+table_heading.style.marginTop="30px";
+
+container.appendChild(table_heading);
+
+
+  })
+  .catch(error => {
+    console.error('There was a problem with the fetch operation:', error);
+  });
+
+    
+    </script>
+    </body></html>
